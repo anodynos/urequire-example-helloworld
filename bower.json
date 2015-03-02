@@ -1,0 +1,22 @@
+{
+  "name": "urequire-example-helloworld",
+  "version": "0.1.0",
+  "main": [
+    "build/urequire-example-helloworld-min.js"
+  ],
+  "ignore": [
+    "source",
+    "Gruntfile.coffee",
+    "node_modules",
+    "bower_components",
+    "source/spec/**/*",
+    ".gitignore",
+    ".npmignore",
+    "travis.yml"
+  ],
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "requirejs": "*"
+  }
+}

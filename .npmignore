@@ -1,0 +1,8 @@
+/.idea/
+/node_modules/
+/bower_components/
+/source/
+/DRAFT
+/.npmignore
+/.gitignore
+.urequire-local-deps-cache.json
