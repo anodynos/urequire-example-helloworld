@@ -1,3 +1,6 @@
 define(['planet'], function (planet) {
-    return "Hello, " + planet;
+    var _ = require('lodash');  // AMD & require hybrid
+    if (_.isString(planet)) {
+        return "Hello, " + planet;
+    }
 });

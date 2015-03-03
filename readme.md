@@ -5,11 +5,31 @@
 
 ## Introduction
 
-An example project using [urequire](http://urequire.org), [grunt-urequire](https://github.com/aearly/grunt-urequire) & [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner).
+An example project using [urequire](http://urequire.org), [grunt-urequire](https://github.com/aearly/grunt-urequire) & [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner)
 
-Provides an example of grunt/urequire config for cross module systems development and cross runtimes deployment.
+The DRY & declarative urequire config in `Gruntfile.coffee` allows cross module systems development, cross runtimes deployment & testing .
 
-It comes with automagically generated tests that run on nodejs & phantomjs (browser) both as Web/AMD & Web/Script.
+With about 30 lines it shows off the automatic :
+
+* compilation from **coffee-script** (or **coco**, **LiveScript** etc) to **javascript**.
+
+* conversion from **AMD** or **CommonJs** (or a combination of both) to **UMD** (or any other).
+
+* injection of a `var VERSION = 'x.x.x';` in *main module's body*, where `'x.x.x'` comes from `package.json`.
+
+* gereration of a standard *banner*, with info from `package.json`.
+
+* declarative exporting of main module on `window.myModule` (with `noConflict()` baked in).
+
+* generated tests that run on nodejs & phantomjs (browser) both as Web/AMD & Web/Script. It generates the required HTML, with all module's paths, requirejs configs or `<script ...>` tags etc.
+
+* watch facility with rapid rebuilds, since it compiles *only files that have really changed* and also runs the tests only if a) there were changes and b) with no compilation errors.
+
+* clean of destination files / folders before each build.
+
+* minification, using uglify2 as default
+
+* no need to use grunt plugins (grunt-xxx for watch, coffee, uglify, mocha, concat, phantomjs, banner, clean etc) repeating the same paths & files all over again (keep it DRY).
 
 ## Usage
 
@@ -74,6 +94,8 @@ Under the hood, the watch feature auto generates & invokes a [`grunt-contrib-wat
 ### I want more
 
 For more advanced uRequire config examples with comments etc see :
+
+* [urequire-example](https://github.com/anodynos/urequire-example) going a bit futher than hello world.
 
 * uBerscore's [full grunt config](https://github.com/anodynos/uBerscore) ~~or the one with comments~~.
 
