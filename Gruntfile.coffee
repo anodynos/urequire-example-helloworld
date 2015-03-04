@@ -6,7 +6,7 @@ module.exports = (grunt) ->
         clean: true
 
       lib:
-        path: 'source/code'               # the root to our code
+        path: 'source/code'               # the root to our source code
         dstPath: 'build/lib'              # where to output converted files
         template: banner: true            # add a standard banner derived from 'package.json'
         resources: ['inject-version']     # add a `var VERSION = 'x.x.x';` in main module's body

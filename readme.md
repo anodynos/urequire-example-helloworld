@@ -5,31 +5,49 @@
 
 ## Introduction
 
-An example project using [urequire](http://urequire.org), [grunt-urequire](https://github.com/aearly/grunt-urequire) & [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner)
+An example `Hello world` project build with [urequire](http://urequire.org), [grunt-urequire](https://github.com/aearly/grunt-urequire) & [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner)
 
 The DRY & declarative urequire config in `Gruntfile.coffee` allows cross module systems development, cross runtimes deployment & testing .
 
-With about 30 lines it shows off the automatic :
+Just with 30 lines of config it shows off the automagical :
 
-* compilation from **coffee-script** (or **coco**, **LiveScript** etc) to **javascript**.
+* transparent compilation from **coffee-script** (or **coco**, **LiveScript** etc) to **javascript**.
 
-* conversion from **AMD** or **CommonJs** (or a combination of both) to **UMD** (or any other).
+* conversion from **AMD** or **CommonJs** (or a combination of both) to **UMD** or **combined** (`<script>`, `AMD` & `nodejs` compatible) javascript.
 
-* injection of a `var VERSION = 'x.x.x';` in *main module's body*, where `'x.x.x'` comes from `package.json`.
+* injection of a `var VERSION = 'x.x.x';` in *main module's body*, where `'x.x.x'` comes from `package.json` (using the `urequire-rc-inject-version` ResourceConverter *plugin*)
 
 * gereration of a standard *banner*, with info from `package.json`.
 
 * declarative exporting of main module on `window.myModule` (with `noConflict()` baked in).
 
-* generated tests that run on nodejs & phantomjs (browser) both as Web/AMD & Web/Script. It generates the required HTML, with all module's paths, requirejs configs or `<script ...>` tags etc.
+* minification, using uglify2's defaults
+
+* discovery of dependencies's paths using the info already in **bower** or nodejs's **npm**.
+
+* generated tests that run on nodejs & **phantomjs** (browser) via **mocha** (& **chai**), both as **Web/AMD** & **Web/Script**. It even generates the required HTML, with all module's paths, **requirejs**'s configs & shims or `<script ...>` tags etc.
 
 * watch facility with rapid rebuilds, since it compiles *only files that have really changed* and also runs the tests only if a) there were changes and b) with no compilation errors.
 
 * clean of destination files / folders before each build.
 
-* minification, using uglify2 as default
+* deriving (i.e like *inheritance* in OO) of configs.
 
-* no need to use grunt plugins (grunt-xxx for watch, coffee, uglify, mocha, concat, phantomjs, banner, clean etc) repeating the same paths & files all over again (keep it DRY).
+* and *last but not least*: The *elimination* of (the need for) **grunt plugins**. There's isnt any hint of `grunt-xxx` for `watch`, `coffee-script`, `browserify`, `uglify`, `mocha`, `concat`, `phantomjs`, `banner`, `clean` etc). This is great news cause cause **grunt plugins have many disadvantages** :
+
+     * repeating the same source & dest paths & files all over again (when you should keep it DRY)
+
+     * you have to learn the intricacies & syntax of each plugin
+
+     * making sure they run in the right order & hope they produce the right result
+
+     * producing many intermediate temp files
+
+     * building everything with each change etc
+
+     * writing stuff for things that should be automagical ;-)
+
+Who's gulping ?
 
 ## Usage
 
@@ -99,15 +117,19 @@ For more advanced uRequire config examples with comments etc see :
 
 * uBerscore's [full grunt config](https://github.com/anodynos/uBerscore) ~~or the one with comments~~.
 
-* uRequire's [own build & spec run with uRequire :-)](https://github.com/anodynos/uRequire/blob/master/Gruntfile.coffee)
+* uRequire's [own build & spec run with uRequire - eat your own dog food:-)](https://github.com/anodynos/uRequire/blob/master/Gruntfile.coffee)
 
 * uRequire's [config docs](https://github.com/anodynos/uRequire/blob/master/source/code/config/MasterDefaultsConfig.coffee.md)
+
+* Check out the [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner) docs.
+
+Finally, write your own ResourceConverter or AfterBuilder :-)
 
 # License
 
 The MIT License
 
-Copyright (c) 2014 Agelos Pikoulas (agelos.pikoulas@gmail.com)
+Copyright (c) 2015 Agelos Pikoulas (agelos.pikoulas@gmail.com)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
