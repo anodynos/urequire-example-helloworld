@@ -7,7 +7,7 @@
 
 An example `Hello world` project build with [urequire](http://urequire.org), [grunt-urequire](https://github.com/aearly/grunt-urequire) & [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner)
 
-With just 30 lines of DRY & declarative urequire config, this example shows off the automagical :
+With just ~30 lines of DRY & declarative uRequire config, this example shows off the **automagical** :
 
 * transparent compilation from **coffee-script** (or **coco**, **LiveScript** etc) to **javascript**.
 
@@ -125,7 +125,7 @@ For more advanced uRequire config examples with comments etc see :
 
 * Check out the [urequire-ab-specrunner](https://github.com/anodynos/urequire-ab-specrunner) docs.
 
-Finally, write your own ResourceConverter or AfterBuilder :-)
+Finally, write your awesome `ResourceConverter` or `AfterBuilder` (and publish it as `urequire-rc-awesome` or `urequire-ab-awesome` :-)
 
 # License
 
