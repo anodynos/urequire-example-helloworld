@@ -15,11 +15,11 @@
     "travis.yml"
   ],
   "dependencies": {
-    "lodash": "*"
+    "lodash": "3.x"
   },
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*",
-    "requirejs": "*"
+    "mocha": "2.4.x",
+    "chai": "3.5.x",
+    "requirejs": "2.1.x"
   }
 }

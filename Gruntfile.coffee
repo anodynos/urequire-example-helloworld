@@ -16,7 +16,7 @@ module.exports = (grunt) ->
         dstPath: "build/urequire-example-helloworld-min.js"
         dependencies:
           rootExports: 'index': ['hello'] # 'window.hello' will hold main module (by default on <script ...> execution only)
-        template: 'combined'
+        template: 'combined'              # optimize with RequireJs & Almond
         optimize: true
 
       spec:

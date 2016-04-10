@@ -1,7 +1,7 @@
 # urequire-example-helloworld
 
 [![Build Status](https://travis-ci.org/anodynos/urequire-example-helloworld.png)](https://travis-ci.org/anodynos/urequire-example-helloworld)
-[![Up to date Status](https://david-dm.org/anodynos/urequire-example-helloworld.png)](https://david-dm.org/anodynos/urequire-example-helloworld.png)
+[![Up to date Status](https://david-dm.org/anodynos/urequire-example-helloworld.png)](https://david-dm.org/anodynos/urequire-example-helloworld)
 
 ## Introduction
 
